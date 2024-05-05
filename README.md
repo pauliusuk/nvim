@@ -25,7 +25,7 @@ git clone https://github.com/Paulobox/nvim
 ---
 
 ### Important ⚠️
-###### #note, choco install make
+###### #note for Windows, choco install make
 on Windows go to C:\Users\yourUsername\AppData\Local\nvim-data\lazy\telescope-fzf-native.nvim and run **`make'** command in powershell for telescope fzf plugin to work and avoid errors. <br><br>
 to setup chatgpt:
 - on Linux you can you use [password-store](https://www.passwordstore.org)  how to setup pass [youtube video](https://www.youtube.com/watch?v=FhwsfH2TpFA)<br>
