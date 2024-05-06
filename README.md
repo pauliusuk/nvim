@@ -24,6 +24,18 @@ git clone https://github.com/Paulobox/nvim
 
 ---
 
+[WakaTime](https://wakatime.com/neovim) set-up
+[wakapi](https://wakatime.com/settings/api-key)
+```
+cd ~/.config/nvim/lua/plugins
+echo -e 'return {\n    "wakatime/vim-wakatime",\n    lazy = false,\n}' > wakatime.lua
+```
+
+enter your [wakapi](https://wakatime.com/settings/api-key) key
+:WakaTimeApiKey
+
+---
+
 ### Important ⚠️
 ###### #note for Windows, choco install make
 on Windows go to C:\Users\yourUsername\AppData\Local\nvim-data\lazy\telescope-fzf-native.nvim and run **`make'** command in powershell for telescope fzf plugin to work and avoid errors. <br><br>
