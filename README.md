@@ -43,3 +43,8 @@ to setup chatgpt:
 <!-- ►on Windows to quickly set up place your api key in Documents in file called **`openaikey.txt`** in **`Documents folder`**<br> -->
 <!-- ►storing passwords in txt files is not safe.<br> -->
 - 🚨 If you don't want to setup chatgpt just **remove chatgpt.lua** file from plugins to avoid errors.
+
+- to ignore lsp errors:
+```
+:lua vim.diagnostic.config({virtual_text=false})
+```
