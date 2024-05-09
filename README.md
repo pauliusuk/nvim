@@ -2,7 +2,7 @@
 ---
 ### Prerequisites 🛠️ **`npm`**,**`ripgrep`**,**`python`**
 ```bash
-sudo apt install npm ripgrep python3-venv -y
+sudo apt install -f npm ripgrep python3-venv python3.12-venv -y
 ```
 
 ---
