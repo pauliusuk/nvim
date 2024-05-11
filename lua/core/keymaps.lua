@@ -121,6 +121,41 @@ keymap("v", "<C-s>", "o<Esc>", { noremap = true, silent = true })
 keymap("n", "Q", "<nop>")
 keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 keymap("n", "<leader>gf", vim.lsp.buf.format, { desc = "format" })
+keymap("v", "<leader>gf", vim.lsp.buf.format, { desc = "format" })
+
+-- Command to toggle inline diagnostics
+vim.api.nvim_create_user_command(
+  'DiagnosticsToggleVirtualText',
+  function()
+    local current_value = vim.diagnostic.config().virtual_text
+    if current_value then
+      vim.diagnostic.config({virtual_text = false})
+    else
+      vim.diagnostic.config({virtual_text = true})
+    end
+  end,
+  {}
+)
+
+-- Command to toggle diagnostics
+vim.api.nvim_create_user_command(
+  'DiagnosticsToggle',
+  function()
+    local current_value = vim.diagnostic.is_disabled()
+    if current_value then
+      vim.diagnostic.enable()
+    else
+      vim.diagnostic.disable()
+    end
+  end,
+  {}
+)
+
+-- Keybinding to toggle inline diagnostics (ii)
+vim.api.nvim_set_keymap('n', '<Leader>ii', ':lua vim.cmd("DiagnosticsToggleVirtualText")<CR>', { noremap = true, silent = true })
+
+-- Keybinding to toggle diagnostics (id)
+vim.api.nvim_set_keymap('n', '<Leader>id', ':lua vim.cmd("DiagnosticsToggle")<CR>', { noremap = true, silent = true })
 
 keymap("n", "<C-k>", "<cmd>cnext<CR>zz")
 keymap("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -167,10 +202,10 @@ keymap("n", "<leader>di", function()
 end)
 
 -- --lsp binds only uncomment if keybindings are not set in lsp-config
--- keymap("n", "K", vim.lsp.buf.hover, { desc = "show_description" })
--- keymap("n", "<leader>gd", vim.lsp.buf.definition, { desc = "go_to_definitions" })
--- keymap("n", "<leader>gr", vim.lsp.buf.references, { desc = "guide_references" })
--- keymap("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code_action" })
+keymap("n", "K", vim.lsp.buf.hover, { desc = "show_description" })
+keymap("n", "<leader>gd", vim.lsp.buf.definition, { desc = "go_to_definitions" })
+keymap("n", "<leader>gr", vim.lsp.buf.references, { desc = "guide_references" })
+keymap("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code_action" })
 
 -- reloads file (:source)
 keymap("n", "<leader>so", ":source<CR>")
