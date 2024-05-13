@@ -16,3 +16,8 @@ vim.cmd([[
     nnoremap <Leader>cpurl :CPurl<CR>
 ]])
 
+-- Run xrdb whenever Xdefaults or Xresources are updated.
+vim.cmd[[
+  autocmd BufRead,BufNewFile Xresources,Xdefaults,xresources,xdefaults set filetype=xdefaults
+  autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
+]]
