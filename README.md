@@ -5,6 +5,18 @@
 sudo apt install -f npm ripgrep python3-venv python3.12-venv -y
 ```
 
+<details><summary>arch</summary>
+
+```
+rm -rf ~/.local/share/nvim && rm -rf ~/.local/state/nvim
+cd ~/.config
+rm -rf nvim
+sudo pacman -Syu npm ripgrep python-virtualenv --noconfirm
+git clone https://github.com/Paulobox/nvim
+```
+
+</details>
+
 ---
 
 ### set-up / go to folder and clone ⚙️
