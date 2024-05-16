@@ -3,6 +3,8 @@ local keymap = vim.keymap.set
 vim.g.mapleader = " "
 --quick exit from  trip Q
 keymap("n", "QQQ", ":q!<CR>", { noremap = true }, { desc = "qucik exit" })
+keymap("v", "<leader>wqa", ":wqa<CR>", { desc = "save and quit all" })
+keymap("n", "<leader>wqa", ":wqa<CR>", { desc = "save and quit all" })
 keymap("v", "<leader>qa", ":q<CR>", { desc = "quit" })
 keymap("n", "<leader>qa", ":q<CR>", { desc = "quit" })
 keymap("i", "jj", "<ESC>", { noremap = true }, { desc = "qucik exit insert mode" })
