@@ -12,6 +12,8 @@ keymap("n", "<C-s>", ":w<CR>", { noremap = true, desc = "save" })
 keymap("i", "<C-s>", "<Esc>:w<CR>i", { noremap = true, desc = "save" })
 keymap("n", "<F2>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Rename current word" })
 keymap("n", "<F3>", "/", { desc = "Enter search mode" })
+keymap('n', '<leader>vc', '<C-v>', { noremap = true, silent = true, desc = "Enter Visual Block mode for code block selection" })
+
 
 -- increment/decrement numbers
 keymap("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
