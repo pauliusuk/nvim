@@ -2,10 +2,8 @@
 local keymap = vim.keymap.set
 vim.g.mapleader = " "
 --quick exit from  trip Q
-keymap("n", "QQQ", ":q!<CR>", { noremap = true }, { desc = "qucik exit" })
-keymap("v", "<leader>wqa", ":wqa<CR>", { desc = "save and quit all" })
+keymap("n", "<leader>qq", ":q!<CR>", { noremap = true }, { desc = "exit" })
 keymap("n", "<leader>wqa", ":wqa<CR>", { desc = "save and quit all" })
-keymap("v", "<leader>qa", ":q<CR>", { desc = "quit" })
 keymap("n", "<leader>qa", ":q<CR>", { desc = "quit" })
 keymap("i", "jj", "<ESC>", { noremap = true }, { desc = "qucik exit insert mode" })
 keymap("n", "<C-s>", ":w<CR>", { noremap = true, desc = "save" })
@@ -76,11 +74,10 @@ keymap("n", "<leader>pv", ":vertical Lexplore<CR>", { noremap = true })
 keymap("n", "<leader><f3>", ":UndotreeToggle<CR>")
 
 -- nvim-tree
-keymap("n", "<leader>ex", ":NvimTreeToggle<CR>") -- toggle file explorer
-keymap("n", "<leader>er", ":wincmd w<CR>") -- toggle focus to text side
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>") -- toggle focus to file explorer
-keymap("n", "<leader>ee", ":NvimTreeFocus<CR>") -- toggle focus to file explorer
-keymap("n", "<leader>ef", ":NvimTreeFindFile<CR>") -- find file in file explorer
+keymap("n", "<leader>ww", ":wincmd w<CR>", {desc = "quickly toggle between nvimtree"} ) -- toggle focus to text side
+-- keymap("n", "<leader>ef", ":NvimTreeFindFile<CR>") -- find file in file explorer
 
 
 -- Laptop key shortcuts
@@ -199,11 +196,12 @@ keymap(
   { noremap = true, desc = "DAP UI with reset" }
 )
 keymap("n", "<leader>de", function()
-  require("telescope.builtin").diagnostics({ default_text = ":E:", desc = "Search and navigate through diagnostics" })
-end)
+  require("telescope.builtin").diagnostics({ default_text = ":E:" })
+end, { desc = "Search and navigate through diagnostics" })
+
 keymap("n", "<leader>di", function()
-  require("dap.ui.widgets").hover({ desc = "Show hover information for the current line" })
-end)
+  require("dap.ui.widgets").hover()
+end, { desc = "Show hover information for the current line" })
 
 -- --lsp binds only uncomment if keybindings are not set in lsp-config
 keymap("n", "K", vim.lsp.buf.hover, { desc = "show_description" })

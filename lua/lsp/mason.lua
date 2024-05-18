@@ -13,9 +13,9 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"tsserver",
+					-- "tsserver",
 					"clangd",
-					"pyright",
+					-- "pyright",
 					"html",
 					"cssls",
 					"tailwindcss",
@@ -33,11 +33,11 @@ return {
 			require("mason-tool-installer").setup({
 				ensure_installed = {
 					"prettierd",
-					"black",
-					"isort",
+					-- "black",
+					-- "isort",
 					"cspell",
 					"stylua",
-					"debugpy",
+					-- "debugpy",
 					"eslint_d",
 				},
 			})
