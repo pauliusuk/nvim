@@ -56,7 +56,7 @@ to setup chatgpt:
 <!-- ►storing passwords in txt files is not safe.<br> -->
 - 🚨 If you don't want to setup chatgpt just **remove chatgpt.lua** file from plugins to avoid errors.
 
-- to ignore lsp errors /<leader/>id:
+- to ignore diagnostics lsp errors press |leader|+|id|:
 ```
 :lua vim.diagnostic.config({virtual_text=false})
 ```
