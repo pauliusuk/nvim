@@ -33,6 +33,7 @@ git clone https://github.com/Paulobox/nvim
 1. choco install mingw, choco install fzf.
 2. [node.js](https://nodejs.org/en/download) <br>
 3. npm install -g npm <br>
+4. npm install -g typescript-language-server typescript
 
 ---
 
